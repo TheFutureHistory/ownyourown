@@ -1,0 +1,438 @@
+{% load static %}
+
+<!DOCTYPE html>
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWN YOUR OWN</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/OYO_Favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/12a535f370.js" crossorigin="anonymous"></script>
+    <script src="{% static 'main.js' %}"></script>  
+    <script src="https://js.stripe.com/v3/"></script> 
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<!------------ HOMEPAGE ------------->
+<body id="homepage">
+    <div id="menubar">
+        <a href="http://127.0.0.1:8000/" id="logo">Own Your Own</a>
+        <i class="fa-solid fa-bars" onclick="myMenu()" id="show_menu"></i>
+        <i class="fa-solid fa-xmark" onclick="myMenu()" id="hide_menu" style="display:none" ></i>
+    </div>
+    <!------- FULL PAGE MENU -->
+    <div id="menu_full_page">
+        <div id="fullpage_navbar">
+            <ul id="fullpage_menu_list">
+                <li ><a href="http://127.0.0.1:8000/" id="fullpage_menu_logo" onclick="closeMyMenu()" class="menu_link">OWN YOUR OWN</a></li>
+                <li ><a href="#services" onclick="closeMyMenu()" class="menu_link">Services</a></li>
+                <li ><a href="#process" onclick="closeMyMenu()" class="menu_link">Process</a></li>
+                <li ><a href="#work" onclick="closeMyMenu()" class="menu_link">Work</a></li>
+                <li ><a href="#about" onclick="closeMyMenu()" class="menu_link">About us</a></li>
+                <li ><a href="#contact" onclick="closeMyMenu()" class="menu_link">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+    <!------- HEADER -->
+    <div id="home"></div>
+    <div class="section_containers" id="header_container">
+        <div id="header_overlay"></div>
+        <video autoplay muted loop id="header_video">
+            <source src="static/images/OYO_header_vid.mp4" type="video/mp4">
+        </video>
+        <div id="top_header">
+            <h1 id="header_title">WEB DEVELOPMENT</h1>
+            <h2 id="header_subtitle">FOR INDUSTRY LEADERS</h2>
+            <h3 id="header_tagline">MAKE YOUR ONLINE PRESENCE UNFORGETTABLE</h3>
+            <a id="header_button" href="#call_to_action">START A PROJECT</a>
+        </div>
+    </div>
+    <!------- SERVICES -->
+    <div id="services"></div>
+    <div class="section_containers" id="services_container">
+        <h2 class="section_title">Our Services</h2>
+        <hr class="underlines">
+        <div id="services_panel_section">
+            <div class="services_panel_section_row">
+                <div class="services_panel" id="service1">
+                    <lord-icon class="big_moving_icon" src="https://cdn.lordicon.com/homgucvg.json" trigger="loop" delay="500" colors="primary:#ffd201,secondary:#ffffff"></lord-icon>
+                    <h3 class="services_panel_title">WEB DEVELOPMENT</h3>
+                    <p class="services_panel_description">Whatever step you are in your website development, we will be able to come in and help you achieved your desired vision.</p>
+                </div>
+                <div class="services_panel" id="service2">
+                    <lord-icon class="big_moving_icon" src="https://cdn.lordicon.com/mvdvucwp.json" trigger="loop" delay="500" colors="primary:#ffd201,secondary:#ffffff"></lord-icon>
+                    <h3 class="services_panel_title">WEB MAINTENANCE</h3>
+                    <p class="services_panel_description">Whenever we complete a project, we offer our clients the opportunity to avoid headaches and let us handle their site’s maintenance.</p>
+                </div>
+            </div>
+            <div class="services_panel_section_row">
+                <div class="services_panel" id="service3">
+                    <lord-icon class="big_moving_icon" src="https://cdn.lordicon.com/mnvyyxlr.json" trigger="loop" delay="500" colors="primary:#ffd201,secondary:#ffffff"></lord-icon>
+                    <h3 class="services_panel_title">CONTENT CREATION</h3>
+                    <p class="services_panel_description">You may not be an artist, but that shouldn’t stop you from realising your goals. We offer logo design, text copy, icon design or animation.</p>
+                </div>
+                <div class="services_panel" id="service4">
+                    <lord-icon class="big_moving_icon" src="https://cdn.lordicon.com/tmdkxenp.json" trigger="loop" delay="500" colors="primary:#ffd201,secondary:#ffffff"></lord-icon>
+                    <h3 class="services_panel_title">SEO - Search Engine Optimization</h3>
+                    <p class="services_panel_description">You can have the best website, but what is it worth if nobody can see it. We find new ways to bring you right in front of your audience. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- PROCESS -->
+    <div id="process"></div>
+    <div class="section_containers" id="process_container">
+        <h2 class="section_title">Our Process</h2>
+        <hr class="underlines">
+        <div id="process_paragraphs">
+            <p class="process_description">We specialize in developing  <span style="color:var(--yellow)">world-class leading websites</span> aimed at increasing productivity, sales, and connectivity.</p>
+            <p class="process_description">We know you need a website that will facilitate your process to acquire new clients while increasing your value.</p>
+        </div>
+        <div id="process_steps">
+            <div class="process_steps_row">
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/zpxybbhl.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Communicate</h3>
+                    <p class="process_step_description">Every projects starts with great communication, innovative brainstorming and an open mind.
+                    </p>
+                </div>
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/yjmqwtbi.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Create</h3>
+                    <p class="process_step_description">Every copy, pictures and videos are perfectly selected to enhance your website.
+                    </p>
+                </div>
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/tbbucjhp.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Design</h3>
+                    <p class="process_step_description">From wireframes, layouts, fonts, color theory and more. Every details counts.
+                    </p>
+                </div>
+            </div>
+            <div class="process_steps_row">
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/xqfngtiz.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Develop</h3>
+                    <p class="process_step_description">
+                        Designing is an art and coding is a science. We combine them to achieve incredible results.
+                    </p>
+                </div>
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/zrlunoio.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Launch</h3>
+                    <p class="process_step_description">
+                        Final revisions. We dot all the I’s and cross all the T’s before celebrating the launch.
+                    </p>
+                </div>
+                <div class="process_steps_individual">
+                    <lord-icon class="moving_icon" src="https://cdn.lordicon.com/gtdtnfyc.json" trigger="loop" delay="500" colors="primary:#ffffff,secondary:#ffd201"></lord-icon>
+                    <h3 class="process_step_title">Evolve</h3>
+                    <p class="process_step_description">
+                        We maintain the outcome while finding ways to stand out and improve the website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- CALL TO ACTION -->
+    <div id="call_to_action"></div>
+    <div class="section_containers" id="calltoaction_container">
+        <h3 id="calltoaction_subtitle">READY TO START YOUR PROJECT</h3>
+        <h2 class="section_title" id="calltoaction_title">Schedule your 30 minutes free consultation</h2>
+        <hr id="calltoaction_underline">
+        <p id="calltoaction_paragraph">
+            Every partnership starts with a great conversation. Whether you’re interested in discussing a new project or simply wish to find out more about our services and what we can do for you, we are here to help. Let's get the conversation going.
+        </p>
+        <div id="calltoaction_buttons">
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ownyourown/30min'});return false;">SCHEDULE A CALL</a>
+            <a href="#contact">CONTACT US</a>
+        </div>
+    </div>
+    <!------- WORK -->
+    <div id="work"></div>
+    <div class="section_containers work_container" >
+        <h3 class="work_container_title">WORK</h3>
+        <hr class="work_container_title_underline">
+        <div id="work_info_container">
+            <div class="work_container_column" id="work_container_column1">
+                <h2 class="work_container_companyname">MAPS CANADA</h2>
+                <h4 class="work_container_serviceoffer">Web design</h4>
+                <p class="work_container_jobdescription">
+                    Maps Canada wanted to enhance their online presence and attract more visitors to help their mission. Own Your Own revamped their website by focusing on the brand’s guidelines and making their web design more contemporary. 
+                </p>
+                <a href="https://mapscanada.org/" class="work_container_visitsite_BTN">visit the site &nbsp&nbsp <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="work_container_column" id="work_container_column2" onclick="window.location='https://mapscanada.org/';">
+            </div>
+        </div>
+    </div>
+    <!------- WORK -->
+    <div class="section_containers work_container">
+        <h3 class="work_container_title">WORK</h3>
+        <hr class="work_container_title_underline">
+        <div id="work_info_container">
+            <div class="work_container_column" id="work_container_column1">
+                <h2 class="work_container_companyname">XARAGUA HOTEL</h2>
+                <h4 class="work_container_serviceoffer">Web development, Hosting, Booking system</h4>
+                <p class="work_container_jobdescription">
+                    Xaragua Hotel wanted an online presence that could attract clients while providing clear informations. Own Your Own developed a  conscise website to help them retain their guests via an online room reservation.
+                </p>
+                <a href="https://xaraguahotel.com/" class="work_container_visitsite_BTN">visit the site &nbsp&nbsp <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="work_container_column" id="work_container_column3" onclick="window.location='https://xaraguahotel.com/';" >
+            </div>
+        </div>
+    </div>
+        <!------- WORK -->
+        <div class="section_containers work_container">
+            <h3 class="work_container_title">WORK</h3>
+            <hr class="work_container_title_underline">
+            <div id="work_info_container">
+                <div class="work_container_column" id="work_container_column1">
+                    <h2 class="work_container_companyname">WORK GAMBIT</h2>
+                    <h4 class="work_container_serviceoffer">Web development, Hosting, Job listing system</h4>
+                    <p class="work_container_jobdescription">
+                        Work Gambit wanted a clear, clean and conscise website that would allow their users to easily post job applications online. Own Your Own developed a sleek site to help them present a professional approach to their users.
+                    </p>
+                    <a href="https://workgambit.com/" class="work_container_visitsite_BTN">visit the site &nbsp&nbsp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="work_container_column" id="work_container_column5" onclick="window.location='https://workgambit.com/';" >
+                </div>
+            </div>
+        </div>
+    <!------- WORK -->
+    <div class="section_containers work_container">
+        <h3 class="work_container_title">WORK</h3>
+        <hr class="work_container_title_underline">
+        <div id="work_info_container">
+            <div class="work_container_column" id="work_container_column1">
+                <h2 class="work_container_companyname">MAD FRESH</h2>
+                <h4 class="work_container_serviceoffer">Web development, Hosting, E-commerce</h4>
+                <p class="work_container_jobdescription">
+                    Mad Fresh needed a way to properly represent their brand online while retaining full control of their vision. Own Your Own built a custom website that would allow them to express themselves authentically. 
+                </p>
+                <a href="https://madfresh.ca/'" class="work_container_visitsite_BTN">visit the site &nbsp&nbsp <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="work_container_column" id="work_container_column4" onclick="window.location='https://madfresh.ca/';">
+            </div>
+        </div>
+    </div>
+    <!------- CALL TO ACTION -->
+    <div id="call_to_action"></div>
+    <div class="section_containers" id="calltoaction_container">
+        <h3 id="calltoaction_subtitle">READY TO START YOUR PROJECT</h3>
+        <h2 class="section_title" id="calltoaction_title">Schedule your 30 minutes free consultation</h2>
+        <hr id="calltoaction_underline">
+        <p id="calltoaction_paragraph">
+            Every partnership starts with a great conversation. Whether you’re interested in discussing a new project or simply wish to find out more about our services and what we can do for you, we are here to help. Let's get the conversation going.
+        </p>
+        <div id="calltoaction_buttons">
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ownyourown/30min'});return false;">SCHEDULE A CALL</a>
+            <a href="#contact">CONTACT US</a>
+        </div>
+    </div>
+    <!------- ABOUT -->
+    <div id="about"></div>
+    <div class="section_containers" id="about_container">
+        <div id="about_container_column">
+            <div class="about_container_column_row">
+                <div class="about_container_infobox">
+                    <h2 class="section_title about_container_title">About Us</h2>
+                    <hr class="underlines">
+                    <p class="about_container_description">
+                        Own Your Own is a Web Development agency dedicated to bringing websites to life. As an agency, we take pride in our <span style="color: var(--yellow);">strong work ethic</span> and <span style="color: var(--yellow);">incredible results</span>. We will treat your website with as much love and importance as ours.
+                    </p>
+                </div>
+                <div class="about_container_infobox">
+                    <h2 class="section_title about_container_title">Our Mission</h2>
+                    <hr class="underlines">
+                    <p class="about_container_description">
+                        To amplify our client’s vision by providing remarkable <span style="color: var(--yellow);"> detailed oriented</span> websites while bringing a <span style="color: var(--yellow);">fresh and innovative</span> partnership between parties. We aim to provide the best online service. 
+                    </p>
+                </div>
+            </div>
+            <div class="about_container_column_row">
+                <div class="about_container_infobox">
+                    <h2 class="section_title about_container_title">Our Vision</h2>
+                    <hr class="underlines">
+                    <p class="about_container_description">
+                        Unlike many agencies who offer coutless services, we solely focus on Web Development to offer you a <span style="color: var(--yellow);">reliable service</span>. We wish to improve the trust between clients and agencies as we shatter the preconcieved notions surrounding web development agencies.
+                    </p>
+                </div>
+                <div class="about_container_infobox">
+                    <h2 class="section_title about_container_title">Our Team</h2>
+                    <hr class="underlines">
+                    <p class="about_container_description">
+                        We are <span style="color: var(--yellow);">highly skilled</span> individuals with diverse creative backgrounds. We increase our knowledge daily to carry our skills in the projects we work on. We will treat you as partners and we make sure to deliver on what we promise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- TESTIMONIALS -->
+    <div class="section_containers" id="testimonials_container">
+        <h2 class="section_title">Testimonials</h2>
+        <hr class="underlines">
+        <div class="in_container" id="testimonials_in_container">
+            <div id="testimonial_section">
+                <div class="quote_card" >
+                    <p class="testimonial_paragrah" id="long_quote">Our new website is brighter, more modern design, ensuring a more positive user experience for our community and increase engagement with the website.</p>
+                    <div class="quote_card_person">
+                        <h1 class="testimonial_person">Ilayda Gokcen</h1>
+                        <h2 class="testimonial_companyname">MAPS Canada</h2>
+                        <h3 class="testimonial_position">Coordinator</h3>
+                    </div>
+                </div>
+                <div class="quote_card" id="unique_quote_card">
+                    <p class="testimonial_paragrah">Own Your Own was able to upgrade our website design and functions, which helped us improve the branding of our company and attract more client to book rooms with us.</p>
+                    <div class="quote_card_person">
+                        <h1 class="testimonial_person">Yvette Edouard</h1>
+                        <h2 class="testimonial_companyname">Xaragua Hotel</h2>
+                        <h3 class="testimonial_position">Owner</h3>
+                    </div>
+                </div>
+                <div class="quote_card">
+                    <p class="testimonial_paragrah">Own Your Own was really easy to work with. They provided original design concepts that really made our products stand out on the website. We would work with them again.</p>
+                    <div class="quote_card_person">
+                        <h1 class="testimonial_person">Alain Jean</h1>
+                        <h2 class="testimonial_companyname">Mad Fresh</h2>
+                        <h3 class="testimonial_position">Co-Founder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- CONTACT -->
+    <div id="contact"></div>
+    <div class="section_containers" id="contact_container">
+        <div id="contact_section">
+            <form action="http://127.0.0.1:8000/#contact" method="POST" id="contact_form">
+                {% csrf_token %}
+                <div id="contact_list">
+                    <h4 class="section_title">Start a project</h4>
+                    <hr class="underlines">
+                    <h3 id="contact_subtitle">Free 30 minutes consultation</h3>
+                    <h5>Name</h5>
+                    <input type="text" name="message_name" id="msg_name">
+                    <h5>Email</h5>
+                    <input type="email" name="message_email" id="msg_email">
+                    <h5>Project</h5>
+                    <select name="message_project" id="msg_project">
+                        <option value="--">Please select</option>
+                        <option value="UI Design">UI Design</option>
+                        <option value="UX Design">UX Design</option>
+                        <option value="Wordpress">Wordpress</option>
+                        <option value="Full-stack Development">Full-stack Development</option>
+                        <option value="Front-end Development">Front-end Development</option>
+                        <option value="Back-end Development">Back-end Development</option>
+                    </select>
+                    <h5>Budget</h5>
+                    <select name="message_budget" id="msg_budget">
+                        <option value="--">Please select</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                        <option value="$20,000 - $30,000">$20,000 - $30,000</option>
+                        <option value="$30,000 - $40,000">$30,000 - $40,000</option>
+                        <option value="$40,000 - $50,000">$40,000 - $50,000</option>
+                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                        <option value="$100,000+">$100,000+</option>
+                    </select>
+                    <h5>Additional Details</h5>
+                    <textarea name="message_details" id="msg_details"></textarea>
+                    <input type="submit" value="SEND MESSAGE" id="msg_button">
+                    {% if message_name %}
+                    <h2>Thanks {{message_name }}, your email was sent successfully.</h2>
+                    {% else %}
+                    {% endif %}
+                </div>
+            </form>
+            <div id="contact_img">
+                <img id="floating_laptop" src="{% static 'images/Mac1.png' %}" alt="">
+            </div>
+        </div>
+        <div id="footer_section">
+            <h5>contactus@ownyourown.com</h5>
+            <h5>Own Your Own Inc, 2022  &copy All rights reserved</h5>
+        </div>
+    </div>
+</body>
+<script>
+/* When click on button, make full page menu appear and dissapear */
+function myMenu() {
+  var x = document.getElementById("menu_full_page");
+  var y = document.getElementById("logo");
+  var w = document.getElementById("show_menu");
+  var v = document.getElementById("hide_menu");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+    y.style.visibility = "visible"
+    w.style.display = "block"
+    v.style.display = "none"
+  } else {
+    x.style.display = "flex";
+    y.style.visibility = "hidden"
+    w.style.display = "none"
+    v.style.display = "block"
+  }
+}
+/* When click on button, make full page menu appear and dissapear */
+function closeMyMenu() {
+  var x = document.getElementById("menu_full_page");
+  var y = document.getElementById("logo");
+  var w = document.getElementById("show_menu");
+  var v = document.getElementById("hide_menu");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+    y.style.visibility = "visible"
+    w.style.display = "block"
+    v.style.display = "none"
+  } else {
+    x.style.display = "flex";
+    y.style.visibility = "hidden"
+    w.style.display = "none"
+    v.style.display = "block"
+  }
+}
+
+/* MAKE SECTION FADE OUT */
+console.log(document.body.scrollTop )
+  console.log(document.documentElement.scrollTop) 
+const checkpoint = 900;
+ window.addEventListener("scroll", () => {
+   const currentScroll = window.pageYOffset;
+   if (currentScroll <= checkpoint) {
+     opacity = 1 - currentScroll / checkpoint;
+   } else {
+     opacity = 0;
+   }
+   document.querySelector("#header_container").style.opacity = opacity;
+ });
+
+ function reveal() {
+  var reveals = document.querySelectorAll(".section_containers");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
+</body>
+</html>
