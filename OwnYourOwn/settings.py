@@ -26,7 +26,7 @@ PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-u8&zewr6s@1uyhivp3+gmkvnl&2=vo2)8&ns%^fx1!r*)2dj1n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ 'ownyourown.herokuapp.com', '127.0.0.1', 'ownyourown.website', 'www.ownyourown.website']
 
